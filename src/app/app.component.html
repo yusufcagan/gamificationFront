@@ -1,0 +1,61 @@
+<!-- <ng-container [ngSwitch]="currentRoute">
+  <ng-container *ngFor="let url of ['/', '#', ' ','/sendMail','/dersler','/ders-detay']">
+    <ng-container *ngSwitchCase="url">
+      <div class="container-fluidwidth">
+        <app-header></app-header>
+
+        <div class="container">
+          <div class="row">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+
+        <app-footer></app-footer>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngFor="let url of ['/log-in', '/sign-up','/sifre-unuttum','/yeni-sifre']">
+    <ng-container *ngSwitchCase="url">
+      <div class="container-fluidwidth">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'/home'">
+    <div class="container-fluidwidth">
+      <app-header></app-header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <div class="container-fluidwidth">
+      <app-header></app-header>
+    <router-outlet></router-outlet>
+    </div>
+    
+
+  </ng-container>
+</ng-container> -->
+<div class="container-fluidwidth">
+  <app-header></app-header>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+

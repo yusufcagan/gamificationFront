@@ -1,0 +1,69 @@
+<div class="jumbotron">
+    <div class="container text-center text-lg-left">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="display-4">
+                    <span class="highlight-word">{{ ders.isim }}</span>
+                </h1>
+                <p class="lead">
+                    {{ ders.aciklama }}
+                </p>
+                <span class="text-center d-inline-block">
+                    <a class="btn btn-primary btn-lg w-100" (click)="derseKatil(ders.id)" role="button">Derse katıl</a>
+                </span>
+            </div>
+            <div class="col-lg-4 align-items-center d-flex">
+                <img [src]="'data:' + ders.resimContentType + ';base64,' + ders.resim" alt="" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+
+    <div class="container mb-5">
+        <div class="row">
+
+            <h6 class="text-muted">
+                <h1>{{mufredat.mufredatBaslik}}</h1>
+            </h6>
+            <ng-container *ngFor="let bolum of sortedCollection; index as i ">
+
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <!-- <h5 class="card-header"></h5> -->
+                        <div class="card-body">
+                            <h5>{{i+1}} - {{bolum.bolumBaslik}}</h5>
+                            <table class="table  table-bordered ">
+
+                                <tbody>
+                                    <tr>
+                                        <th>puan</th>
+                                        <td>{{bolum.puan}}</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th>zaman</th>
+                                        <td>{{bolum.sure}}dk</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a [routerLink]="['../../ders-detay/konu',bolum.id]" class="btn btn-primary">bolume git</a>
+                        </div>
+                    </div>
+
+                    <!-- <li  [routerLink]="['../../ders-detay/konu',bolum.id]"  class="list-group-item"><h3>{{i+1}} - {{bolum.bolumBaslik}}</h3></li> -->
+                </div>
+            </ng-container>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <app-form-message [comments]="ders.dersForm"></app-form-message>
+</div>

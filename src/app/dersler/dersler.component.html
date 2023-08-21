@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h1 class="display-1  text-center text-uppercase">Dersler</h1>
+<ng-container *ngIf="isLoading">
+    <h1>yükleniyor</h1>
+</ng-container>
+
+    <div class="row pt-5 m-auto">
+        <ng-container *ngFor="let ders of dersler ">
+
+            <div class="col-md-6 col-lg-4 pb-3">
+
+                <div class="card card-custom bg-white border-white border-0">
+                    <ng-container *ngIf="ders.resim">
+                        <div class="card-custom-img"
+                            [style]="getUrlImage('data:' + ders.resimContentType + ';base64,' + ders.resim)"></div>
+
+                    </ng-container>
+
+                    <div class="card-body" style="overflow-y: auto">
+                        <h4 class="card-title">{{ders.isim}}</h4>
+                        <p class="card-text">{{aciklamaYaziSabitle(ders.aciklama)}} </p>
+                    </div>
+                    <div class="card-footer" style="background: inherit; border-color: inherit;">
+                        <a class="btn btn-primary" [routerLink]="['/ders-detay',ders.id]">içerik</a>
+                        <a (click)="derseKatil(ders.id)" class="btn btn-outline-primary ml-1">derse katıl</a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-container>
+    </div>
+</div>

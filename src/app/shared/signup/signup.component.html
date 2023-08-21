@@ -1,0 +1,51 @@
+
+<!-- üye ol ========================= signup-style-2 start ========================= -->
+<section class="signup signup-style-2 mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="signup-content-wrapper">
+          <div class="section-title">
+            <h3 class="mb-20">Üye ol</h3>
+            <p>Eğitim partneri uygulamasına hoş geldiniz burdan sisteme üye olabilirsiniz</p>
+          </div>
+          <div class="image">
+            <img src="assets/img/signup/signup-2/signup-img.svg" alt="" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="signup-form-wrapper">
+          <form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="single-input">
+              <label for="signup-name">Kullanıcı ismi</label>
+              <input formControlName="username" type="text" id="signup-name" name="signup-name" placeholder="Kullanıcı adınızı girin" autocomplete="off" >
+            </div>
+            <div class="single-input">
+              <label for="signup-email">E-mail</label>
+              <input formControlName="email" type="email" id="signup-email" name="signup-email" autocomplete="off" 
+                placeholder="E-mail adresinizi girin">
+            </div>
+
+            <div class="single-input">
+              <label for="signup-password">Şifre</label>
+              <input formControlName="password" [type]="fieldTextType ? 'text' : 'password'" id="signup-password"
+                name="signup-password" placeholder="Şifrenizi girin">
+              <!-- <i class="lni lni-eye"></i> -->
+              <i class="lni" [ngClass]="{
+                  'lni-eye': !fieldTextType,
+                  'lni-ban': fieldTextType
+                }" (click)="toggleFieldTextType()"></i>
+            </div>
+
+            <div class="signup-button mb-25">
+              <button class="button button-lg radius-10 pl-60 pr-60" type="submit">Üye ol</button>
+            </div>
+            <p>Zaten hesabınız var mı? <a routerLink="/log-in">Giriş yap</a> </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ========================= signup-style-2 end ========================= -->
